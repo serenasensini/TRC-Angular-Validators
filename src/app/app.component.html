@@ -1,0 +1,37 @@
+<div class="cdk-overlay-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <span>Test you validators!</span>
+      </mat-card-title>
+    </mat-card-header>
+
+    <form [formGroup]="userForm">
+      <p>
+        <mat-label>Name</mat-label>
+        <mat-form-field>
+          <input matInput  formControlName="userName" type="text" />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-label>E-mail</mat-label>
+        <mat-form-field>
+          <input matInput  formControlName="emailId" type="text" />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-label>User code</mat-label>
+        <mat-form-field>
+          <input matInput  formControlName="userCode" type="text" />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-label>Is form valid? {{userForm.valid}} </mat-label>
+      </p>
+      <mat-card-actions align="end">
+        <button mat-stroked-button (click)="submit()" [disabled]="!userForm.valid">Submit</button>
+      </mat-card-actions>
+    </form>
+
+  </mat-card>
+</div>
